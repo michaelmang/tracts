@@ -26,11 +26,6 @@ p > strong {
   transition: 0.4s 0.4s transform ease-out;
 }
 
-.card:hover {
-  transform: scale(1.2);
-  transform-origin: top-right;
-}
-
 .card .card_description {
   animation: fade-in 0.4s ease-out;
 }

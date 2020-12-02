@@ -7,7 +7,7 @@ import Navbar from './Navbar.js';
 
 export default function Hero({ author, children, image }) {
   return (
-    <div className="w-full header p-10 pl-12 pt-4" style={{ "--header-background": `url('${image}')`}}>
+    <div className="w-full header p-4 sm:p-10 sm:pl-12 pt-4" style={{ "--header-background": `url('${image}')`}}>
       <div className="h-full w-full flex flex-col">
         <Navbar />
         <div className="w-full h-full flex flex-col items-center justify-end">

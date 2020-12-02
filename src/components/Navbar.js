@@ -8,7 +8,7 @@ export default function Navbar() {
         <div className="container flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between">
             <Link
-              className="text-lg font-bold uppercase text-red-600"
+              className="text-md sm:text-lg font-bold uppercase text-red-600"
               to="/"
             >
               Tracts

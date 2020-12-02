@@ -54,7 +54,7 @@ function App() {
           <Route exact path="/">
             <Layout>
               {error && (
-                <div className="flex flex-col items-between w-full p-4 pl-12 bg-red-700 text-white">
+                <div className="flex flex-col items-between w-full p-4 sm:pl-12 bg-red-700 text-white">
                   {error.graphQLErrors &&
                     error.graphQLErrors.map(({ message }, i) => (
                       <div className="flex justify-between">
