@@ -34,7 +34,7 @@ const TRACTS = gql`
 `;
 
 function App() {
-  const { loading, error, data } = useQuery(TRACTS);
+  const { loading, data } = useQuery(TRACTS);
 
   const getTract = (id) => data.categories.find(({ tracts }) => tracts.find(tract => tract.id === id)).tracts[0];
   const hero = loading ? { title: null } : data.categories.find(({ type }) => type === 'featured').tracts[0];
