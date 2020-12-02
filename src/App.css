@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+* {
+  letter-spacing: 0.5px;
+  font-family: 'Rubik', sans-serif;
+}
+
+p {
+  line-height: 28px;
+  margin-bottom: 2rem;
+  animation: fade-in 1s ease-out;
+}
+
+p > strong {
+  color: #34D399;
+}
+
+.card {
+  background: linear-gradient(
+    180deg, rgba(0, 0, 0, 0),rgba(0, 0, 0, 1) 100%
+  ), 
+  var(--card-background);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: 0.4s 0.4s transform ease-out;
+}
+
+.card:hover {
+  transform: scale(1.2);
+  transform-origin: top-right;
+}
+
+.card .card_description {
+  animation: fade-in 0.4s ease-out;
+}
+
+.hero {
+  background: linear-gradient(
+    90deg, rgba(24, 24, 24, 1),rgba(24, 24, 24, 0) 100%
+  ), 
+  var(--hero-background);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+}
+
+.header {
+  background: linear-gradient(
+    0deg, rgba(24, 24, 24, 1),rgba(24, 24, 24, 0.6) 100%
+  ), 
+  var(--header-background);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 30vh;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
