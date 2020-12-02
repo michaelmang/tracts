@@ -57,8 +57,22 @@ p > strong {
   height: 30vh;
 }
 
+.progress-meter {
+  animation: roundtime calc(var(--duration) * 250ms) linear forwards;
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;
+  }
+}
+
+@keyframes roundtime {
+  from {
+    width: 5%;
+  }
+
+  to {
+    width: 100%;
   }
 }

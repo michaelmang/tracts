@@ -1,4 +1,6 @@
-import { useQuery, gql } from '@apollo/client';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
+import { useQuery, gql } from "@apollo/client";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./index.css";
@@ -34,10 +36,15 @@ const TRACTS = gql`
 `;
 
 function App() {
-  const { loading, data } = useQuery(TRACTS);
+  const { loading, data, error } = useQuery(TRACTS);
 
-  const getTract = (id) => data.categories.find(({ tracts }) => tracts.find(tract => tract.id === id)).tracts[0];
-  const hero = loading ? { title: null } : data.categories.find(({ type }) => type === 'featured').tracts[0];
+  const getTract = (id) =>
+    data.categories.find(({ tracts }) =>
+      tracts.find((tract) => tract.id === id)
+    ).tracts[0];
+  const hero = loading
+    ? { title: null }
+    : data.categories.find(({ type }) => type === "featured").tracts[0];
 
   return (
     <Router>
@@ -46,14 +53,46 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Layout>
-              <Hero {...hero} loading={loading}>{hero.title}</Hero>
-              {!loading && data.categories.map(({ id, type, tracts }) => (
-                <Section key={id} title={type}>
-                  {tracts.map(({ title, ...rest }) => (
-                    <Card key={rest.id} {...rest}>{title}</Card>
-                  ))}
-                </Section>
-              ))}
+              {error && (
+                <div className="flex flex-col items-between w-full p-4 pl-12 bg-red-700 text-white">
+                  {error.graphQLErrors &&
+                    error.graphQLErrors.map(({ message }, i) => (
+                      <div className="flex justify-between">
+                        <span key={i}>
+                          <FontAwesomeIcon
+                            className="mr-2"
+                            icon={faExclamationCircle}
+                          />
+                          Error: {message}
+                        </span>
+                        <span>Please try again</span>
+                      </div>
+                    ))}
+                </div>
+              )}
+              {loading && (
+                <div className="relative">
+                  <div className="overflow-hidden h-2 text-xs flex bg-black">
+                    <div
+                      style={{ "--duration": 10 }}
+                      className="progress-meter rounded shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-gradient-to-r from-red-500"
+                    ></div>
+                  </div>
+                </div>
+              )}
+              <Hero {...hero} loading={loading}>
+                {hero.title}
+              </Hero>
+              {!loading &&
+                data.categories.map(({ id, type, tracts }) => (
+                  <Section key={id} title={type}>
+                    {tracts.map(({ title, ...rest }) => (
+                      <Card key={rest.id} {...rest}>
+                        {title}
+                      </Card>
+                    ))}
+                  </Section>
+                ))}
             </Layout>
           </Route>
 
@@ -64,11 +103,12 @@ function App() {
               const tract = getTract(routerProps.match.params.name);
               return (
                 <Layout {...routerProps}>
-                  <Header {...tract}>
-                    {tract.title}
-                  </Header>
+                  <Header {...tract}>{tract.title}</Header>
                   <div className="flex flex-col w-full items-center min-h-screen">
-                    <div className="text-white p-12 max-w-4xl text-justify" dangerouslySetInnerHTML={{ __html: tract.content }} />
+                    <div
+                      className="text-white p-12 max-w-4xl text-justify"
+                      dangerouslySetInnerHTML={{ __html: tract.content }}
+                    />
                   </div>
                 </Layout>
               );
