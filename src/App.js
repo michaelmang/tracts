@@ -62,7 +62,6 @@ function App() {
             path="/tracts/:name"
             render={(routerProps) => {
               const tract = getTract(routerProps.match.params.name);
-              console.log({ tract });
               return (
                 <Layout {...routerProps}>
                   <Header {...tract}>
