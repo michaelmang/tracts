@@ -30,6 +30,17 @@ p > strong {
   animation: fade-in 0.4s ease-out;
 }
 
+.card:hover {
+  transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+  .card:hover {
+    transform: scale(1.15);
+  }
+}
+
+
 .hero {
   background: linear-gradient(
     90deg, rgba(24, 24, 24, 1),rgba(24, 24, 24, 0) 100%

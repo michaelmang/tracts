@@ -11,8 +11,8 @@ const defaultImage = "https://images.unsplash.com/photo-1528222354212-a29573cdb8
 
 export default function Hero({ author, children, description, image = defaultImage, loading, tags }) {
   return (
-    <div className="w-full hero p-4 sm:p-10 sm:pl-12 pt-4" style={{ "--hero-background": `url('${image}')`}}>
-      <div className="h-full w-3/4 sm:w-1/2 flex flex-col justify-between">
+    <div className="w-full hero p-4 md:p-10 md:pl-12 pt-4" style={{ "--hero-background": `url('${image}')`}}>
+      <div className="h-full w-3/4 md:w-1/2 flex flex-col justify-between">
         <Navbar />
         <div className="flex flex-col items-start justify-end pt-6">
           {!loading && (
@@ -20,12 +20,12 @@ export default function Hero({ author, children, description, image = defaultIma
               <Pace getPace={(char) => (char === " " ? 40 : 20)}>
                 {tags && (
                   <div className="flex text-white">
-                    <div key={tags.id} className="uppercase text-xs sm:text-xs bg-red-700 p-1 sm:p-2 rounded-sm mb-4 mr-1">{tags.type}</div>
+                    <div key={tags.id} className="uppercase text-xs md:text-xs bg-red-700 p-1 md:p-2 rounded-sm mb-4 mr-1">{tags.type}</div>
                   </div>
                 )}
-                <div className="text-white text-md sm:text-3xl mb-2">{children}</div>
-                <div className="text-white text-xs sm:text-sm mb-4"><span className="font-bold text-gray-400">Written By:</span> {author}</div>
-                <div className="text-white text-xs sm:text-sm">
+                <div className="text-white text-md md:text-3xl mb-2">{children}</div>
+                <div className="text-white text-xs md:text-sm mb-4"><span className="font-bold text-gray-400">Written By:</span> {author}</div>
+                <div className="text-white text-xs md:text-sm">
                   {description}
                 </div>
                 <div className="flex my-5">

@@ -16,7 +16,7 @@ export default function Card({ author, children, description, image, tags }) {
 
   return (
     <div
-      className="card transform hover:scale-105 sm:hover:scale-125 w-11/12 sm:w-1/5 mb-8 sm:mb-1 mr-3 sm:mr-1 rounded-lg bg-overlay flex flex-col justify-end items-start text-white p-4"
+      className="card w-11/12 md:w-1/5 mb-8 md:mb-1 mr-3 md:mr-1 rounded-lg bg-overlay flex flex-col justify-end items-start text-white p-4"
       onMouseEnter={updateHovered(true)}
       onMouseLeave={updateHovered(false)}
       style={{
@@ -27,12 +27,12 @@ export default function Card({ author, children, description, image, tags }) {
       <div className="flex flex-col">
         {tags && !isHovered && (
           <div className="flex">
-            <div key={tags.id} className="uppercase text-xs bg-red-700 p-1 sm:p-2 rounded-sm mb-2 mr-1">{tags.type}</div>
+            <div key={tags.id} className="uppercase text-xs bg-red-700 p-1 md:p-2 rounded-sm mb-2 mr-1">{tags.type}</div>
           </div>
         )}
-        <div className="text-sm sm:text-2xl font-bold mb-2">{children}</div>
-        <div className="flex flex-col sm:flex-row text-white text-xs"><span className="font-bold text-gray-400">Written By:</span> {author}</div>
-        {isHovered && <div className="card_description text-xs nsm:text-sm my-6">{description}</div>}
+        <div className="text-sm md:text-2xl font-bold mb-2">{children}</div>
+        <div className="flex flex-col md:flex-row text-white text-xs"><span className="font-bold text-gray-400">Written By:</span> {author}</div>
+        {isHovered && <div className="card_description text-xs nmd:text-sm my-6">{description}</div>}
         {isHovered && (
           <div className="flex">
             <Link to={`/tracts/${kebabcase(children)}`}>

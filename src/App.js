@@ -52,9 +52,9 @@ function App() {
       <div>
         <Switch>
           <Route exact path="/">
-            <Layout>
+            <Layout loading={loading}>
               {error && (
-                <div className="flex flex-col items-between w-full p-4 sm:pl-12 bg-red-700 text-white">
+                <div className="flex flex-col items-between w-full p-4 md:pl-12 bg-red-700 text-white">
                   {error.graphQLErrors &&
                     error.graphQLErrors.map(({ message }, i) => (
                       <div className="flex justify-between">
@@ -102,11 +102,11 @@ function App() {
             render={(routerProps) => {
               const tract = getTract(routerProps.match.params.name);
               return (
-                <Layout {...routerProps}>
+                  <Layout {...routerProps} loading={loading}>
                   <Header {...tract}>{tract.title}</Header>
                   <div className="flex flex-col w-full items-center min-h-screen">
                     <div
-                      className="text-white p-12 max-w-4xl text-justify"
+                      className="text-white p-10 md:p-12 max-w-4xl text-justify text-sm md:text-md"
                       dangerouslySetInnerHTML={{ __html: tract.content }}
                     />
                   </div>

@@ -4,7 +4,7 @@ export default function Button({ children, isSecondary = false, size = 'sm' }) {
   const px = size === 'xs' ? 4 : 6; 
   return (
     <button
-      className={`${bg} ${text} font-bold text-xs sm:text-${size} px-2 sm:px-${px} py-1 sm:py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-2 mb-1`}
+      className={`${bg} ${text} font-bold text-xs md:text-${size} px-2 md:px-${px} py-1 md:py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-2 mb-1`}
       type="button"
     >
       {children}
