@@ -1,25 +1,25 @@
-import { useQuery } from "@apollo/client";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useQuery } from '@apollo/client';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import "./index.css";
-import "./App.css";
+import './index.css';
+import './App.css';
 
-import { TRACTS } from "./gql.js";
-import { getTractByRouteName } from "./selectors.js";
-import Feed from "./components/Feed.js";
-import Header from "./components/Header.js";
-import Hero from "./components/Hero.js";
-import Layout from "./components/Layout.js";
-import ProgressBar from "./components/ProgressBar.js";
-import Reader from "./components/Reader.js";
-import ScrollToTop from "./components/ScrollToTop.js";
+import { TRACTS } from './gql.js';
+import { getTractByRouteName } from './selectors.js';
+import Feed from './components/Feed.js';
+import Header from './components/Header.js';
+import Hero from './components/Hero.js';
+import Layout from './components/Layout.js';
+import ProgressBar from './components/ProgressBar.js';
+import Reader from './components/Reader.js';
+import ScrollToTop from './components/ScrollToTop.js';
 
 function App() {
   const { loading, data, error } = useQuery(TRACTS);
 
   const hero = loading
     ? { title: null }
-    : data.categories.find(({ type }) => type === "featured").tracts[0];
+    : data.categories.find(({ type }) => type === 'featured').tracts[0];
 
   return (
     <Router>
@@ -40,10 +40,7 @@ function App() {
             exact
             path="/tracts/:name"
             render={(routerProps) => {
-              const tract = getTractByRouteName(
-                data,
-                routerProps.match.params.name
-              );
+              const tract = getTractByRouteName(data, routerProps.match.params.name);
               return (
                 <Layout {...routerProps} loading={loading}>
                   <Header {...tract}>{tract.title}</Header>

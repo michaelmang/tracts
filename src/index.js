@@ -7,9 +7,7 @@ import reportWebVitals from './reportWebVitals';
 
 const client = new ApolloClient({
   uri: 'https://cosmic-stingray-61.hasura.app/v1/graphql',
-  cache: new InMemoryCache({
-
-  })
+  cache: new InMemoryCache({}),
 });
 
 ReactDOM.render(
