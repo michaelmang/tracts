@@ -41,7 +41,7 @@ function App() {
   const getTract = (id) =>
     data.categories.find(({ tracts }) =>
       tracts.find((tract) => tract.id === id)
-    ).tracts[0];
+    ).tracts.find((tract) => tract.id === id);
   const hero = loading
     ? { title: null }
     : data.categories.find(({ type }) => type === "featured").tracts[0];
