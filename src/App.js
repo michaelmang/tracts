@@ -24,7 +24,7 @@ const TRACTS = gql`
         image
         title
         description
-        tags {
+        tag {
           id
           type
         }

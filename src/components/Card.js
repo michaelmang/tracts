@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 import Button from "./Button.js";
 
-export default function Card({ author, children, description, image, tags }) {
+export default function Card({ author, children, description, image, tag }) {
   const [isHovered, setIsHovered] = useState(false);
 
   const updateHovered = (val) => async () => {
@@ -25,9 +25,9 @@ export default function Card({ author, children, description, image, tags }) {
       }}
     >
       <div className="flex flex-col">
-        {tags && !isHovered && (
+        {tag && !isHovered && (
           <div className="flex">
-            <div key={tags.id} className="uppercase text-xs bg-red-700 p-1 md:p-2 rounded-sm mb-2 mr-1">{tags.type}</div>
+            <div key={tag.id} className="uppercase text-xs bg-red-700 p-1 md:p-2 rounded-sm mb-2 mr-1">{tag.type}</div>
           </div>
         )}
         <div className="text-sm md:text-2xl font-bold mb-2">{children}</div>
