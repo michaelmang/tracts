@@ -35,13 +35,16 @@ const TRACTS = gql`
   }
 `;
 
+const getTract = (data, id) => {
+  const matchingCategory = data.categories.find(({ tracts }) => tracts.find(matchingTract({ by: id })))
+  return matchingCategory.tracts.find(matchingTract);
+};
+
+const matchingTract = ({ by: id }) => (tract) => tract.id === id;
+
 function App() {
   const { loading, data, error } = useQuery(TRACTS);
 
-  const getTract = (id) =>
-    data.categories.find(({ tracts }) =>
-      tracts.find((tract) => tract.id === id)
-    ).tracts.find((tract) => tract.id === id);
   const hero = loading
     ? { title: null }
     : data.categories.find(({ type }) => type === "featured").tracts[0];
@@ -100,7 +103,7 @@ function App() {
             exact
             path="/tracts/:name"
             render={(routerProps) => {
-              const tract = getTract(routerProps.match.params.name);
+              const tract = getTract(data, routerProps.match.params.name);
               return (
                   <Layout {...routerProps} loading={loading}>
                   <Header {...tract}>{tract.title}</Header>
