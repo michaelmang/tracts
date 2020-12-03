@@ -31,7 +31,7 @@ export default function Card({ author, children, description, image, tags }) {
           </div>
         )}
         <div className="text-sm md:text-2xl font-bold mb-2">{children}</div>
-        <div className="flex flex-col md:flex-row text-white text-xs"><span className="font-bold text-gray-400">Written By:</span> {author}</div>
+        <div className="flex flex-col md:flex-row text-white text-xs"><span className="font-bold text-gray-400 mr-1">Written By:</span> {author}</div>
         {isHovered && <div className="card_description text-xs nmd:text-sm my-6">{description}</div>}
         {isHovered && (
           <div className="flex">
