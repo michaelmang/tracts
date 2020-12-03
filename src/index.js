@@ -1,7 +1,7 @@
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './tailwind.dist.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

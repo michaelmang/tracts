@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import './index.css';
+import './tailwind.dist.css';
 import './App.css';
 
 import { TRACTS } from './gql.js';

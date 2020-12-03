@@ -1,3 +1,8 @@
+/**
+ * This injects Tailwind's base styles and any base styles registered by
+ * plugins.
+ */
+
 /*! modern-normalize v1.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
 /*
@@ -536,6 +541,11 @@ video {
   height: auto;
 }
 
+/**
+  * This injects Tailwind's component classes and any component classes
+  * registered by plugins.
+  */
+
 .container {
   width: 100%;
 }
@@ -569,6 +579,11 @@ video {
     max-width: 1536px;
   }
 }
+
+/**
+  * This injects Tailwind's utility classes and any utility classes registered
+  * by plugins.
+  */
 
 .space-y-0 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
@@ -2055,7 +2070,7 @@ video {
 
 .appearance-none {
   -webkit-appearance: none;
-  appearance: none;
+          appearance: none;
 }
 
 .bg-fixed {
@@ -2084,7 +2099,7 @@ video {
 
 .bg-clip-text {
   -webkit-background-clip: text;
-  background-clip: text;
+          background-clip: text;
 }
 
 .bg-transparent {
@@ -19414,7 +19429,7 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.focus-within\:shadow-md:focus-within {
+.focus-within\:shadow-sm:focus-within {
   --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
@@ -19454,7 +19469,7 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.hover\:shadow-md:hover {
+.hover\:shadow-sm:hover {
   --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
@@ -19494,7 +19509,7 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.focus\:shadow-md:focus {
+.focus\:shadow-sm:focus {
   --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
@@ -24778,22 +24793,22 @@ video {
 
 .select-none {
   -webkit-user-select: none;
-  user-select: none;
+          user-select: none;
 }
 
 .select-text {
   -webkit-user-select: text;
-  user-select: text;
+          user-select: text;
 }
 
 .select-all {
   -webkit-user-select: all;
-  user-select: all;
+          user-select: all;
 }
 
 .select-auto {
   -webkit-user-select: auto;
-  user-select: auto;
+          user-select: auto;
 }
 
 .align-baseline {
@@ -29128,6 +29143,14 @@ video {
   animation: bounce 1s infinite;
 }
 
+/**
+  * Use this directive to control where Tailwind injects the responsive
+  * variations of each utility.
+  *
+  * If omitted, Tailwind will append these classes to the very end of
+  * your stylesheet by default.
+  */
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -30648,7 +30671,7 @@ video {
 
   .sm\:appearance-none {
     -webkit-appearance: none;
-    appearance: none;
+            appearance: none;
   }
 
   .sm\:bg-fixed {
@@ -30677,7 +30700,7 @@ video {
 
   .sm\:bg-clip-text {
     -webkit-background-clip: text;
-    background-clip: text;
+            background-clip: text;
   }
 
   .sm\:bg-transparent {
@@ -48003,7 +48026,7 @@ video {
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
-  .sm\:focus-within\:shadow-md:focus-within {
+  .sm\:focus-within\:shadow-sm:focus-within {
     --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
@@ -48043,7 +48066,7 @@ video {
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
-  .sm\:hover\:shadow-md:hover {
+  .sm\:hover\:shadow-sm:hover {
     --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
@@ -48083,7 +48106,7 @@ video {
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
-  .sm\:focus\:shadow-md:focus {
+  .sm\:focus\:shadow-sm:focus {
     --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
@@ -53358,22 +53381,22 @@ video {
 
   .sm\:select-none {
     -webkit-user-select: none;
-    user-select: none;
+            user-select: none;
   }
 
   .sm\:select-text {
     -webkit-user-select: text;
-    user-select: text;
+            user-select: text;
   }
 
   .sm\:select-all {
     -webkit-user-select: all;
-    user-select: all;
+            user-select: all;
   }
 
   .sm\:select-auto {
     -webkit-user-select: auto;
-    user-select: auto;
+            user-select: auto;
   }
 
   .sm\:align-baseline {
@@ -59198,7 +59221,7 @@ video {
 
   .md\:appearance-none {
     -webkit-appearance: none;
-    appearance: none;
+            appearance: none;
   }
 
   .md\:bg-fixed {
@@ -59227,7 +59250,7 @@ video {
 
   .md\:bg-clip-text {
     -webkit-background-clip: text;
-    background-clip: text;
+            background-clip: text;
   }
 
   .md\:bg-transparent {
@@ -76553,7 +76576,7 @@ video {
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
-  .md\:focus-within\:shadow-md:focus-within {
+  .md\:focus-within\:shadow-sm:focus-within {
     --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
@@ -76593,7 +76616,7 @@ video {
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
-  .md\:hover\:shadow-md:hover {
+  .md\:hover\:shadow-sm:hover {
     --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
@@ -76633,7 +76656,7 @@ video {
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
-  .md\:focus\:shadow-md:focus {
+  .md\:focus\:shadow-sm:focus {
     --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
@@ -81908,22 +81931,22 @@ video {
 
   .md\:select-none {
     -webkit-user-select: none;
-    user-select: none;
+            user-select: none;
   }
 
   .md\:select-text {
     -webkit-user-select: text;
-    user-select: text;
+            user-select: text;
   }
 
   .md\:select-all {
     -webkit-user-select: all;
-    user-select: all;
+            user-select: all;
   }
 
   .md\:select-auto {
     -webkit-user-select: auto;
-    user-select: auto;
+            user-select: auto;
   }
 
   .md\:align-baseline {
@@ -87748,7 +87771,7 @@ video {
 
   .lg\:appearance-none {
     -webkit-appearance: none;
-    appearance: none;
+            appearance: none;
   }
 
   .lg\:bg-fixed {
@@ -87777,7 +87800,7 @@ video {
 
   .lg\:bg-clip-text {
     -webkit-background-clip: text;
-    background-clip: text;
+            background-clip: text;
   }
 
   .lg\:bg-transparent {
@@ -105103,7 +105126,7 @@ video {
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
-  .lg\:focus-within\:shadow-md:focus-within {
+  .lg\:focus-within\:shadow-sm:focus-within {
     --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
@@ -105143,7 +105166,7 @@ video {
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
-  .lg\:hover\:shadow-md:hover {
+  .lg\:hover\:shadow-sm:hover {
     --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
@@ -105183,7 +105206,7 @@ video {
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
-  .lg\:focus\:shadow-md:focus {
+  .lg\:focus\:shadow-sm:focus {
     --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
@@ -110458,22 +110481,22 @@ video {
 
   .lg\:select-none {
     -webkit-user-select: none;
-    user-select: none;
+            user-select: none;
   }
 
   .lg\:select-text {
     -webkit-user-select: text;
-    user-select: text;
+            user-select: text;
   }
 
   .lg\:select-all {
     -webkit-user-select: all;
-    user-select: all;
+            user-select: all;
   }
 
   .lg\:select-auto {
     -webkit-user-select: auto;
-    user-select: auto;
+            user-select: auto;
   }
 
   .lg\:align-baseline {
@@ -116298,7 +116321,7 @@ video {
 
   .xl\:appearance-none {
     -webkit-appearance: none;
-    appearance: none;
+            appearance: none;
   }
 
   .xl\:bg-fixed {
@@ -116327,7 +116350,7 @@ video {
 
   .xl\:bg-clip-text {
     -webkit-background-clip: text;
-    background-clip: text;
+            background-clip: text;
   }
 
   .xl\:bg-transparent {
@@ -133653,7 +133676,7 @@ video {
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
-  .xl\:focus-within\:shadow-md:focus-within {
+  .xl\:focus-within\:shadow-sm:focus-within {
     --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
@@ -133693,7 +133716,7 @@ video {
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
-  .xl\:hover\:shadow-md:hover {
+  .xl\:hover\:shadow-sm:hover {
     --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
@@ -133733,7 +133756,7 @@ video {
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
-  .xl\:focus\:shadow-md:focus {
+  .xl\:focus\:shadow-sm:focus {
     --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
@@ -139008,22 +139031,22 @@ video {
 
   .xl\:select-none {
     -webkit-user-select: none;
-    user-select: none;
+            user-select: none;
   }
 
   .xl\:select-text {
     -webkit-user-select: text;
-    user-select: text;
+            user-select: text;
   }
 
   .xl\:select-all {
     -webkit-user-select: all;
-    user-select: all;
+            user-select: all;
   }
 
   .xl\:select-auto {
     -webkit-user-select: auto;
-    user-select: auto;
+            user-select: auto;
   }
 
   .xl\:align-baseline {
@@ -144848,7 +144871,7 @@ video {
 
   .\32xl\:appearance-none {
     -webkit-appearance: none;
-    appearance: none;
+            appearance: none;
   }
 
   .\32xl\:bg-fixed {
@@ -144877,7 +144900,7 @@ video {
 
   .\32xl\:bg-clip-text {
     -webkit-background-clip: text;
-    background-clip: text;
+            background-clip: text;
   }
 
   .\32xl\:bg-transparent {
@@ -162203,7 +162226,7 @@ video {
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
-  .\32xl\:focus-within\:shadow-md:focus-within {
+  .\32xl\:focus-within\:shadow-sm:focus-within {
     --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
@@ -162243,7 +162266,7 @@ video {
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
-  .\32xl\:hover\:shadow-md:hover {
+  .\32xl\:hover\:shadow-sm:hover {
     --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
@@ -162283,7 +162306,7 @@ video {
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
-  .\32xl\:focus\:shadow-md:focus {
+  .\32xl\:focus\:shadow-sm:focus {
     --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
@@ -167558,22 +167581,22 @@ video {
 
   .\32xl\:select-none {
     -webkit-user-select: none;
-    user-select: none;
+            user-select: none;
   }
 
   .\32xl\:select-text {
     -webkit-user-select: text;
-    user-select: text;
+            user-select: text;
   }
 
   .\32xl\:select-all {
     -webkit-user-select: all;
-    user-select: all;
+            user-select: all;
   }
 
   .\32xl\:select-auto {
     -webkit-user-select: auto;
-    user-select: auto;
+            user-select: auto;
   }
 
   .\32xl\:align-baseline {
