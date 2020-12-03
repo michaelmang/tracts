@@ -37,7 +37,7 @@ const TRACTS = gql`
 
 const getTract = (data, id) => {
   const matchingCategory = data.categories.find(({ tracts }) => tracts.find(matchingTract({ by: id })))
-  return matchingCategory.tracts.find(matchingTract);
+  return matchingCategory.tracts.find(matchingTract({ by: id }));
 };
 
 const matchingTract = ({ by: id }) => (tract) => tract.id === id;
