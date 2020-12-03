@@ -171900,3 +171900,8 @@ video {
     animation: bounce 1s infinite;
   }
 }
+
+button:hover {
+  transition-delay: 1s;
+  animation: bounce 1s infinite;
+}

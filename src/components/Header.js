@@ -30,7 +30,6 @@ export default function Hero({ author, children, image, loading }) {
                   <div className="text-white text-xs md:text-sm mb-2">
                     <span className="font-bold">Written By:</span> {author}
                   </div>
-
                 </Pace>
               </WindupChildren>
               <div className="flex mt-5">
