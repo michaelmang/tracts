@@ -10,7 +10,6 @@ import Feed from './components/Feed.js';
 import Header from './components/Header.js';
 import Hero from './components/Hero.js';
 import Layout from './components/Layout.js';
-import ProgressBar from './components/ProgressBar.js';
 import Reader from './components/Reader.js';
 import ScrollToTop from './components/ScrollToTop.js';
 
@@ -28,7 +27,6 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Layout error={error} loading={loading}>
-              {loading && <ProgressBar />}
               <Hero {...hero} loading={loading}>
                 {hero.title}
               </Hero>
@@ -40,10 +38,10 @@ function App() {
             exact
             path="/tracts/:name"
             render={(routerProps) => {
-              const tract = getTractByRouteName(data, routerProps.match.params.name);
+              const tract = loading ? { content: null, title: null } : getTractByRouteName(data, routerProps.match.params.name);
               return (
                 <Layout {...routerProps} loading={loading}>
-                  <Header {...tract}>{tract.title}</Header>
+                  <Header {...tract} loading={loading}>{tract.title}</Header>
                   <Reader content={tract.content} />
                 </Layout>
               );
