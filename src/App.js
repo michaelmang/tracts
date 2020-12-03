@@ -38,10 +38,14 @@ function App() {
             exact
             path="/tracts/:name"
             render={(routerProps) => {
-              const tract = loading ? { content: null, title: null } : getTractByRouteName(data, routerProps.match.params.name);
+              const tract = loading
+                ? { content: null, title: null }
+                : getTractByRouteName(data, routerProps.match.params.name);
               return (
                 <Layout {...routerProps} loading={loading}>
-                  <Header {...tract} loading={loading}>{tract.title}</Header>
+                  <Header {...tract} loading={loading}>
+                    {tract.title}
+                  </Header>
                   <Reader content={tract.content} />
                 </Layout>
               );
