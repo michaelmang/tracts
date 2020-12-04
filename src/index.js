@@ -1,19 +1,27 @@
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+import { Auth0Provider } from '@auth0/auth0-react';
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import './tailwind.dist.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const client = new ApolloClient({
-  uri: 'https://cosmic-stingray-61.hasura.app/v1/graphql',
+  uri: process.env.REACT_APP_APOLLO_CLIENT_URI,
   cache: new InMemoryCache({}),
 });
 
 ReactDOM.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <App />
+      <Auth0Provider
+        domain={process.env.REACT_APP_AUTH0_DOMAIN}
+        clientId={process.env.REACT_APP_AUTH0_CLIENT_ID}
+        redirectUri={window.location.origin}
+      >
+        <App />
+      </Auth0Provider>
     </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root')

@@ -28,7 +28,7 @@ export default function Feed({ data }) {
       ))}
       {tracts.length > defaultLimit && limit !== effectivelyNoLimit && (
         <FontAwesomeIcon
-          className="ml-8 mb-8 self-center cursor-pointer hover:animate-bounce"
+          className="ml-8 mb-8 self-center cursor-pointer"
           color="white"
           icon={size.width < md ? faChevronDown : faChevronRight}
           onClick={loadAll}

@@ -18,7 +18,7 @@ function App() {
 
   const hero = loading
     ? { title: null }
-    : data.categories.find(({ type }) => type === 'featured').tracts[0];
+    : data?.categories?.find(({ type }) => type === 'featured').tracts[0];
 
   return (
     <Router>
