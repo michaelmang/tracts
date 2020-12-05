@@ -14,6 +14,12 @@ export const TRACTS = gql`
           id
           type
         }
+        reviews {
+          id
+          created_at
+          rating
+          review
+        }
       }
       id
       type

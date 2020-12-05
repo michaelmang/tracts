@@ -7074,6 +7074,11 @@ lodash.kebabcase@^4.1.1:
   resolved "https://registry.yarnpkg.com/lodash.kebabcase/-/lodash.kebabcase-4.1.1.tgz#8489b1cb0d29ff88195cceca448ff6d6cc295c36"
   integrity sha1-hImxyw0p/4gZXM7KRI/21swpXDY=
 
+lodash.meanby@^4.10.0:
+  version "4.10.0"
+  resolved "https://registry.yarnpkg.com/lodash.meanby/-/lodash.meanby-4.10.0.tgz#02306328dbe81a37412cd0b253815fdfbd5025e8"
+  integrity sha1-AjBjKNvoGjdBLNCyU4Ff371QJeg=
+
 lodash.memoize@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
