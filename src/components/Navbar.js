@@ -41,7 +41,7 @@ export default function Navbar() {
               {isExpanded && (
                 <div className="flex flex-col mt-2">
                   <WindupChildren>
-                    <div className="text-xs md:text-base pr-5 font-light animate-pulse cursor-pointer" onClick={handleLogout}>Log Out</div>
+                    <div className="text-xs md:text-base pr-5 animate-pulse cursor-pointer" onClick={handleLogout}>Log Out</div>
                   </WindupChildren>
                 </div>
               )}

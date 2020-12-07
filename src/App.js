@@ -46,7 +46,7 @@ function App() {
                   <Header {...tract} loading={loading}>
                     {tract.title}
                   </Header>
-                  <Reader content={tract.content} reviews={tract.reviews} />
+                  <Reader content={tract.content} reviews={tract.reviews} {...routerProps} />
                 </Layout>
               );
             }}

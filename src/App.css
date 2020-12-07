@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
 * {
   letter-spacing: 0.5px;
@@ -9,6 +9,10 @@ p {
   line-height: 28px;
   margin-bottom: 2rem;
   animation: fade-in 1s ease-out;
+}
+
+p:last-child {
+  margin-bottom: 0;
 }
 
 p > strong {
