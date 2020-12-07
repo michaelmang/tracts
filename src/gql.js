@@ -19,6 +19,8 @@ export const TRACTS = gql`
           created_at
           rating
           review
+          reviewer
+          review_title
         }
       }
       id
