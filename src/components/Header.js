@@ -31,13 +31,13 @@ export default function Hero({ author, children, image, loading }) {
                     <span className="font-bold">Written By:</span> {author}
                   </div>
                 </Pace>
+                <div className="flex mt-5">
+                  <Button onClick={updateHasCopied}>
+                    {hasCopied ? 'Copied': 'Share'}
+                      <FontAwesomeIcon className="ml-2" icon={hasCopied ? faCheck : faCopy} />
+                  </Button>
+                </div>
               </WindupChildren>
-              <div className="flex mt-5">
-                <Button onClick={updateHasCopied}>
-                  {hasCopied ? 'Copied': 'Share'}
-                    <FontAwesomeIcon className="ml-2" icon={hasCopied ? faCheck : faCopy} />
-                </Button>
-              </div>
             </Fragment>
           )}
         </div>

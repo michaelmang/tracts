@@ -2,16 +2,20 @@ import meanBy from 'lodash.meanby';
 
 const matchingTract = ({ by: id }) => (tract) => tract.id === id;
 
-export const getRatingStars = (reviews) => {
+export const getRatingsStars = (reviews) => {
   let ratingMean;
-  let ratingToStars;
+  let ratingsToStars;
   
   if (reviews?.length > 0) {
     ratingMean = meanBy(reviews, 'rating');
-    ratingToStars = [...new Array(Math.floor(ratingMean)).keys()];
+    ratingsToStars = [...new Array(Math.floor(ratingMean)).keys()];
   }
 
-  return { ratingMean, ratingToStars };
+  return { ratingMean, ratingsToStars };
+};
+
+export const getRatingToStars = (rating) => {
+  return [...new Array(rating).keys()];
 };
 
 export const getTractByRouteName = (data, routeName) => {

@@ -14,7 +14,7 @@ import Reader from './components/Reader.js';
 import ScrollToTop from './components/ScrollToTop.js';
 
 function App() {
-  const { loading, data, error } = useQuery(TRACTS);
+  const { loading, data, error, refetch } = useQuery(TRACTS);
 
   const hero = loading
     ? { title: null }
@@ -46,7 +46,7 @@ function App() {
                   <Header {...tract} loading={loading}>
                     {tract.title}
                   </Header>
-                  <Reader content={tract.content} reviews={tract.reviews} {...routerProps} />
+                  <Reader content={tract.content} loading={loading} refetch={refetch} reviews={tract.reviews} {...routerProps} />
                 </Layout>
               );
             }}
