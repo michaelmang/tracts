@@ -1,11 +1,9 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faStarHalf } from '@fortawesome/free-solid-svg-icons';
 import kebabcase from 'lodash.kebabcase';
-import meanBy from 'lodash.meanby';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { animated, useSpring } from 'react-spring';
 
+import RatingStars from './RatingStars.js';
 import { fadeIn } from '../animations.js';
 
 export default function Card({ author, children, description, image, tag, reviews }) {
@@ -25,13 +23,6 @@ export default function Card({ author, children, description, image, tag, review
   const handleClick = () => {
     history.push(`/tracts/${kebabcase(children)}`);
   };
-
-  let ratingMean;
-  let ratingToStars;
-  if (reviews?.length > 0) {
-    ratingMean = meanBy(reviews, 'rating');
-    ratingToStars = [...new Array(Math.floor(ratingMean)).keys()];
-  }
 
   return (
     <animated.div
@@ -56,15 +47,7 @@ export default function Card({ author, children, description, image, tag, review
             </div>
           </div>
         )}
-        {ratingToStars && (
-          <div className="flex items-center mb-2">
-            <div className="text-red-700 mr-1 mt-1">{ratingMean}</div>
-            {ratingToStars.map((_) => (
-              <FontAwesomeIcon className="mr-1" color="#B91C1C" icon={faStar} />
-            ))}
-            {!Number.isInteger(ratingMean) && <FontAwesomeIcon color="#B91C1C" icon={faStarHalf} />}
-          </div>
-        )}
+        <RatingStars className="mb-2" reviews={reviews} />
         <animated.div style={step2} className="text-sm md:text-2xl font-bold mb-2">
           {children}
         </animated.div>
