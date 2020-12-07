@@ -14,7 +14,7 @@ export const TRACTS = gql`
           id
           type
         }
-        reviews {
+        reviews(order_by: {created_at: asc}) {
           id
           created_at
           rating
