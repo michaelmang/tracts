@@ -42,6 +42,8 @@ export default function Reader({ content, loading, match, refetch, reviews }) {
   const [needsReview, setNeedsReview] = useState(false);
   const [isAddingReview, setAddingReview] = useState(false);
 
+  const username = user?.name || user?.email;
+
   const updateHoveredRating = (value) => () => {
     setHoveredRating(value);
   };
@@ -88,7 +90,7 @@ export default function Reader({ content, loading, match, refetch, reviews }) {
         rating,
         review,
         review_title: title,
-        reviewer: user.name,
+        reviewer: username,
         tract_id: match.params.name,
       },
     });
@@ -103,7 +105,7 @@ export default function Reader({ content, loading, match, refetch, reviews }) {
     if (
       isAddingReview &&
       data?.insert_reviews_one?.id &&
-      !reviews.some((review) => review.reviewer === user.name)
+      !reviews.some((review) => review.reviewer === username)
     ) {
       refetch();
       return;
@@ -112,17 +114,17 @@ export default function Reader({ content, loading, match, refetch, reviews }) {
     if (
       isAddingReview &&
       data?.insert_reviews_one?.id &&
-      reviews.some((review) => review.reviewer === user.name)
+      reviews.some((review) => review.reviewer === username)
     ) {
       setAddingReview(false);
       return;
     }
-  }, [isAddingReview, data?.insert_reviews_one?.id, refetch, reviews, user?.name]);
+  }, [isAddingReview, data?.insert_reviews_one?.id, refetch, reviews, username]);
 
   const hasAddedReview =
     isAuthenticated &&
     reviews?.some((review) => {
-      return review?.reviewer === user?.name;
+      return review?.reviewer === username;
     });
 
   const hasRatings = reviews?.some((review) => review.rating);
@@ -312,7 +314,7 @@ export default function Reader({ content, loading, match, refetch, reviews }) {
                       <div className="flex text-gray-400 mb-4 text-xs md:text-sm justify-between">
                         <div className="flex items-center">
                           {reviewer}{' '}
-                          {user?.name === reviewer && (
+                          {username === reviewer && (
                             <FontAwesomeIcon
                               className="-mt-1 ml-1 text-yellow-300"
                               icon={faStar}
