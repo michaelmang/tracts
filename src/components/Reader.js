@@ -298,7 +298,10 @@ export default function Reader({ content, loading, match, refetch, reviews }) {
           <div className="flex flex-col w-full mb-6 md:mb-0 md:w-1/3">
             <div className="text-white text-md md:text-xl mb-4">Reviews</div>
             {!hasReviews && (
-              <div className="text-white">Be the first one to write a review</div>
+              <div className="text-white">
+                {hasRatings && "No reviews"}
+                {!hasRatings && "Be the first one to write a review"}
+              </div>
             )}
             {hasReviews &&
               reviews
