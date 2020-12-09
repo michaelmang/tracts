@@ -3,7 +3,7 @@ import { gql } from '@apollo/client';
 export const TRACTS = gql`
   query {
     categories {
-      tracts {
+      tracts(order_by: {tag: {type: asc}, title: asc}) {
         author
         content
         id

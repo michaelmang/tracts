@@ -90,3 +90,5 @@ typings/
 .DS_Store
 
 src/tailwind.css
+
+cli/

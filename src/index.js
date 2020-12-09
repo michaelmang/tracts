@@ -4,8 +4,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './tailwind.dist.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import App from './App.js';
+import reportWebVitals from './reportWebVitals.js';
 
 const client = new ApolloClient({
   uri: process.env.REACT_APP_APOLLO_CLIENT_URI,
