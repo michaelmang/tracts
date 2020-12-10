@@ -8,7 +8,6 @@ import { useWindowSize } from '../hooks.js';
 
 const defaultOffset = 0;
 const defaultLimit = 4;
-const effectivelyNoLimit = undefined; // slice(0, undefined) ==> returns full list
 const md = 768; // size of medium breakpoint according to tailwindcss: https://tailwindcss.com/docs/responsive-design
 
 export default function Feed({ data }) {
