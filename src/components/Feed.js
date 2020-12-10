@@ -13,28 +13,33 @@ const md = 768; // size of medium breakpoint according to tailwindcss: https://t
 export default function Feed({ data }) {
   const size = useWindowSize();
   
-  const [limit, setLimit] = useState(defaultLimit);
+  const [expandedSection, setExpandedSection] = useState(null);
 
-  const loadAll = () => {
-    setLimit(effectivelyNoLimit);
+  const expandSection = (id) => () => {
+    setExpandedSection(id);
   };
 
-  return data.categories.map(({ id, type, tracts }) => (
-    <Section key={id} title={type}>
-      {tracts.slice(0, limit).map(({ title, ...rest }) => (
-        <Card key={rest.id} {...rest}>
-          {title}
-        </Card>
-      ))}
-      {tracts.length > defaultLimit && limit !== effectivelyNoLimit && (
-        <FontAwesomeIcon
-          className="ml-8 mb-8 self-center cursor-pointer"
-          color="white"
-          icon={size.width < md ? faChevronDown : faChevronRight}
-          onClick={loadAll}
-          size="3x"
-        />
-      )}
-    </Section>
-  ));
+  const getLimit = (id) => expandedSection === id ? effectivelyNoLimit : defaultLimit;
+
+  return data.categories.map(({ id, type, tracts }) => {
+    const limit = getLimit(id);
+    return (
+      <Section key={id} title={type}>
+        {tracts.slice(0, limit).map(({ title, ...rest }) => (
+          <Card key={rest.id} {...rest}>
+            {title}
+          </Card>
+        ))}
+        {tracts.length > defaultLimit && limit !== effectivelyNoLimit && (
+          <FontAwesomeIcon
+            className={`${size.width < md ? 'ml-0' : 'ml-8'} mb-8 self-center cursor-pointer`}
+            color="white"
+            icon={size.width < md ? faChevronDown : faChevronRight}
+            onClick={expandSection(id)}
+            size="3x"
+          />
+        )}
+      </Section>
+    );
+  });
 }
